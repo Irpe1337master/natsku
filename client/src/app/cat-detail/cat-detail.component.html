@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>{{ cat.name }}</h1>
+  <dl class="list">
+    <dt>Breed</dt>
+    <dd>{{ cat.breed }}</dd>
+    <dt>Age</dt>
+    <dd>{{ cat.age }}</dd>
+  </dl>
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/cat-edit', cat.id]" class="btn btn-primary"> EDIT </a>
+      <button class="btn btn-danger" type="button" (click)="deleteCat(cat.id)">DELETE</button>
+    </div>
+  </div>
+</div>

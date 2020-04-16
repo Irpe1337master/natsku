@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-slide-details" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content border-0">
+      <div class="modal-body">
+         <h2 class="modal-title text-center text-uppercase mb-3 text-primary" id="exampleModalLabel">{{ modal.name }}</h2>
+
+         <div class="row">
+           <div class="col-12 col-sm-6 text-center">
+             <span class="d-block">Breed</span><strong>{{ modal.breed }}</strong>
+           </div>
+           <div class="col-12 col-sm-6 text-center">
+             <span class="d-block">Age</span><strong>{{ modal.age }}</strong>
+           </div>
+         </div>
+
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a [routerLink]="['/cat-activity', modal.id]" data-dismiss="modal" class="btn btn-primary">Activity</a>
+        <a [routerLink]="['/cat-edit', modal.id]" data-dismiss="modal" class="btn btn-primary">Edit</a>
+      </div>
+    </div>
+  </div>
+</div>

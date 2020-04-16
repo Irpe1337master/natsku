@@ -1,0 +1,26 @@
+<!--<div>Some tags before</div>
+   <owl-carousel-o [options]="customOptions">
+   <ng-template carouselSlide>Slide 1</ng-template>
+   <ng-template carouselSlide>Slide 2</ng-template>
+   <ng-template carouselSlide>Slide 3</ng-template><img src="../../images/advancedgrails.svg">
+ </owl-carousel-o>
+ <div>Some tags after</div> -->
+
+<app-modal [modal]="slideDetails"></app-modal>
+
+ <div>
+   <owl-carousel-o [options]="customOptions">
+     <ng-container *ngFor="let slide of slidesStore">
+       <ng-template carouselSlide [id]="slide.id">
+         <div class="row h-100">
+            <div class="col-md-12 text-center align-self-end">
+              <h2 class="mb-3">{{ slide.name }}</h2>
+              <img data-toggle="modal" data-target="#modal-slide-details" (click)="openSlideDetailsModal(slide.id)" class="d-inline-block carousel-cat-box-img mb-5" src="../../assets/images/cat.svg">
+            </div>
+         </div>
+
+       </ng-template>
+     </ng-container>
+
+   </owl-carousel-o>
+ </div>

@@ -1,0 +1,57 @@
+#hero-main-page {
+  background: url('/assets/images/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+.owl-carousel .owl-item {
+  height: 550px;
+}
+
+.carousel-cat-box-img {
+  width: 250px !important;
+}
+
+#hero-main-page .owl-nav{
+    position: absolute;
+    top: 45%;
+    width: 100%;
+}
+#hero-main-page .owl-prev{
+    float:left;
+ }
+#hero-main-page .owl-next{
+    float:right;
+}
+
+#hero-clouds{
+  width: 100%;
+}
+#hero-clouds .cloud-1 img {
+  width: 300px;
+  position: absolute;
+  left: -300px;
+  top: 50px;
+
+  -webkit-animation: moveclouds 35s linear infinite;
+	-moz-animation: moveclouds 35s linear infinite;
+}
+#hero-clouds .cloud-2 img {
+  width: 200px;
+  position: absolute;
+  left: -200px;
+  top: 0px;
+
+  -webkit-animation: moveclouds 55s linear infinite;
+	-moz-animation: moveclouds 55s linear infinite;
+}
+@-webkit-keyframes moveclouds {
+	0% {left:100%;}
+	100% {left: -20%;}
+}
+@-moz-keyframes moveclouds {
+  0% {left:100%;}
+	100% {left: -20%;}
+}

@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="text-center">Cat Activity - {{ cat.name }}</h1>
+  <div class="row">
+    <div class="col-12">
+      <app-line-chart *ngIf="chartData" [chartData]="chartData"></app-line-chart>
+    </div>
+  </div>
+  <hr />
+  <h1 class="text-center">Add new activity</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form (ngSubmit)="saveActivity(cat.id)" #activityForm="ngForm">
+        <div class="row">
+          <div class="col-12 align-self-center">
+            <label for="date">Select date</label>
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy"
+                    name="date" [(ngModel)]="activity.date" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 align-self-center">
+            <div class="form-group">
+              <label for="time">Select time</label>
+              <ngb-timepicker [(ngModel)]="activity.time" name="time"></ngb-timepicker>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!activityForm.valid">Save Activity</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

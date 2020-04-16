@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Add New Cat</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveCat()" #catForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="cat.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Breed</label>
+          <input type="text" class="form-control" [(ngModel)]="cat.breed" name="breed" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Age</label>
+          <input type="text" class="form-control" [(ngModel)]="cat.age" name="age" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!catForm.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

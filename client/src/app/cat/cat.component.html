@@ -1,0 +1,18 @@
+<div id="hero-main-page" class="container-fluid">
+  <div id="hero-clouds">
+    <div class="cloud-1">
+      <img class="" src="../../assets/images/cloud.svg">
+    </div>
+    <div class="cloud-2">
+      <img class="" src="../../assets/images/cloud.svg">
+    </div>
+  </div>
+  <app-carousel [slidesStore]="cats"></app-carousel>
+</div>
+<div class="container">
+  <div class="text-center">
+    <a [routerLink]="['/cat-create']" class="btn btn-primary btn-lg mt-4">
+      Add cat
+    </a>
+  </div>
+</div>
