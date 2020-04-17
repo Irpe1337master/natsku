@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Cat } from '../models/cat.model';
 import { ChartActivity } from '../models/chart-activity.model';
 import { BaseChartDirective } from 'ng2-charts';
@@ -10,7 +10,7 @@ import { BaseChartDirective } from 'ng2-charts';
 })
 export class LineChartComponent implements OnInit {
 
-  @Input('chartData') chartData: ChartActivity;
+  @Input('inputChartData') inputChartData: ChartActivity;
 
   public chartOptions = {};
   public chartLabels = [];
@@ -40,7 +40,7 @@ export class LineChartComponent implements OnInit {
     this.chartType = 'line';
     this.chartLegend = true;
     this.chartData = [{
-      data: this.chartData, label: 'Activity'
+      data: this.inputChartData, label: 'Activity'
     }];
   }
 

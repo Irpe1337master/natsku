@@ -15,7 +15,7 @@ export class CatActivityComponent implements OnInit {
     date: null,
     cat_id: null
   };
-  cat = {};
+  cat:any;
   chartData = [];
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
@@ -63,7 +63,7 @@ export class CatActivityComponent implements OnInit {
     this.http.post('http://localhost:8080/activity/', this.activity)
       .subscribe(res => {
           let id = res['id'];
-          this.router.navigate(['/cat-activity'+this.cat.id]);
+          this.router.navigate(['/cat-activity/'+this.cat.id]);
         }, (err) => {
           console.log(err);
         }
